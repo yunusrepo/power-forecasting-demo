@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import src
 from src.config import ExperimentConfig
 from src.synthetic_data import generate_synthetic_data
 from src.features import build_features
