@@ -25,4 +25,4 @@ proprietary trading logic.
 
 ```bash
 pip install -r requirements.txt
-python scripts/train_and_backtest.py
+python -m scripts.train_and_backtest
