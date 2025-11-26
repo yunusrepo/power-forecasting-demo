@@ -1,13 +1,10 @@
-from __future__ import annotations
-
-from typing import Optional
 import numpy as np
 import pandas as pd
 
 
 def generate_synthetic_data(
     num_days: int = 365,
-    seed: Optional[int] = 42,
+    seed: int = 42,
 ) -> pd.DataFrame:
     """
     Generate a synthetic hourly time series with price, load, and temperature.
@@ -21,7 +18,7 @@ def generate_synthetic_data(
     ----------
     num_days : int
         Number of days to simulate.
-    seed : Optional[int]
+    seed : int
         Random seed for reproducibility.
 
     Returns
@@ -31,7 +28,7 @@ def generate_synthetic_data(
         ["price", "load", "temp"].
     """
     rng = np.random.default_rng(seed)
-    idx = pd.date_range("2020-01-01", periods=num_days * 24, freq="H")
+    idx = pd.date_range("2020-01-01", periods=num_days * 24, freq="h")
     hours = np.arange(len(idx))
 
     # Yearly seasonal term
